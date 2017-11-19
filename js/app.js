@@ -23,11 +23,11 @@ function scrollToDiv(element,navheight){
   	$('body, html').animate({scrollTop: totalScroll}, 800);
 }
 
-$('#menu a, #scroll').click(function(e) { 
-	e.preventDefault(); 
+$('#menu a, #scroll').click(function(e) {
+	e.preventDefault();
   	var el = $(this).attr('href');
   	var elWrapped = $(el);
-  	scrollToDiv(elWrapped,0);    
+  	scrollToDiv(elWrapped,0);
 });
 
 $('.section').waypoint(function(direction) {
@@ -72,7 +72,7 @@ var navigationHeadroom = (function() {
             }
         }, false);
     }
- 
+
     function scrollPage() {
         var sy = scrollY();
         if ( sy >= changeHeaderOn ) {
@@ -80,9 +80,9 @@ var navigationHeadroom = (function() {
         } else {
         	headroom.destroy();
         }
-        didScroll = false;    
+        didScroll = false;
     }
- 
+
     function scrollY() {
         return window.pageYOffset || docElem.scrollTop;
     }
@@ -106,9 +106,9 @@ new AnimOnScroll(document.getElementById('grid'), {
 $('.project-item').click(function () {
 
     var projectID = '#' + $(this).data('project-id');
-    
+
     $('.project').hide();
-    
+
     $(projectID).show();
 
     $('html, body').animate({
@@ -128,10 +128,39 @@ $('.project-close').click(function () {
 });
 
 
+// Open Project2
+
+$('.project-item2').click(function () {
+
+    var projectID = '#' + $(this).data('project-id');
+
+    $('.project').hide();
+
+    $(projectID).show();
+
+    $('html, body').animate({
+        scrollTop: $(projectID).offset().top - 76
+    }, 600);
+
+});
+
+$('.project-close2').click(function () {
+
+    $(this).closest('.project').hide();
+
+    $('html, body').animate({
+        scrollTop: $('#overview').offset().top - 76
+    }, 600);
+
+});
+
+
+
+
 // Menu On Small Screen
 
-$('#menu a').click(function() { 
-    $('#top-bar').removeClass('expanded'); 
+$('#menu a').click(function() {
+    $('#top-bar').removeClass('expanded');
 });
 
 
@@ -142,7 +171,7 @@ $( "#contact-form" ).submit(function( event ) {
     $(this).each(function(){
         var count = $(this).find(':input[data-invalid]').length;
         if (count === 0) {
-            
+
             var url = "./php/form.php";
             var data = $(this).serialize();
             var success = $(this).append( "<p>Thank You! Your message has been sent.</p>" );
@@ -256,7 +285,7 @@ var googlemaptheme = [
         ]
     }
 ];
-  
+
 
 // Google Maps Initialize
 
@@ -268,7 +297,7 @@ function initialize() {
     	mapTypeControl: false,
     	styles: googlemaptheme
   	}
-  	
+
   	var map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
   	var myLatLng = new google.maps.LatLng(37.42265,-122.163417);
   	var image = 'images/google-maps/pin.png';
@@ -294,5 +323,4 @@ function initialize() {
 	});
 }
 
-google.maps.event.addDomListener(window, 'load', initialize); 
-
+google.maps.event.addDomListener(window, 'load', initialize);

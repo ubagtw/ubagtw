@@ -229,7 +229,7 @@
 .top-bar-section ul li > a {
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 1.5em;
+	font-size: 1.3em;
 
 }
 
@@ -241,8 +241,8 @@
 	position: absolute;
 	font-size: 22px;
 	right: -14px;
-	top: 5px;
-	color:#3DB6E9;
+	top: 0px;
+	color:#fff;
 }
 
 .name-logo {
@@ -252,7 +252,7 @@
 .top-bar-section ul {
 	text-align: center;
 	display: block;
-	padding: 10px 0 ;
+	padding: 5px 0 ;
 	background-color: #3DB6E9;
 }
 
@@ -290,7 +290,6 @@
 	line-height: 80px;
 	font-weight: 300;
 	font-size: 17px;
-	text-transform: uppercase;
 	letter-spacing: 4px;
 	margin: 0;
 	padding: 0 26.66667px;
@@ -431,7 +430,7 @@
 
 /*** Portfolio ***/
 
-.project-item {
+.project-item, .project-item2 {
 	position: relative;
 }
 
@@ -489,6 +488,8 @@
 	display: none;
 	position: relative;
 }
+.project img { text-align: center;
+              width:100%;}
 
 .project-close {
 	position: absolute;
@@ -497,6 +498,12 @@
 	font-size: 40px;
 }
 
+.project-close2 {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	font-size: 40px;
+}
 
 /*** Testimonials ***/
 
@@ -627,15 +634,36 @@ small.error {
 
 /*** Map ***/
 
-.map {
+#map iframe{
+	height: 600px;
+	width: 80%;
+}
+
+#map { margin: 20px auto;
+  		text-align: center; }
+
+
+@media(max-width: 640px){
+	#map iframe {
+		width: 90%;
+	}
+}
+/*we need you*/
+#weneedyou li {
+	width: 50%;
+}
+@media(max-width: 640px){
+	#weneedyou ul {
+		max-width: 300px;
+		margin: 0 auto;
+	}
+	#weneedyou li {
 	width: 100%;
-	height: 400px;
+		max-width: 300px;
+		margin: 0 auto;
+		text-align: center;
 }
-
-.map img {
-	max-width: none;
 }
-
 
 /*** Footer ***/
 #footer .section-title, #footer .section-description { text-align: center;}
@@ -650,7 +678,6 @@ small.error {
 	font-size: 14px;
 	font-weight: 300;
 	letter-spacing: 2px;
-	text-transform: uppercase;
 }
 
 
@@ -712,11 +739,11 @@ small.error {
 }
 
 .orbit-alternate .orbit-bullets li {
-	border: 1px solid #3DB6E9;
+	border: 1px solid #fff;
 }
 
 .orbit-alternate .orbit-bullets li.active {
-	background: #3DB6E9;
+	background: #fff;
 }
 
 .orbit-container .orbit-prev,
@@ -757,7 +784,7 @@ small.error {
 
 .orbit-alternate .orbit-prev span:before,
 .orbit-alternate .orbit-next span:before {
-	color: #3DB6E9;
+	color: #fff;
 }
 
 .orbit-container .orbit-prev:hover span:before,
@@ -780,4 +807,28 @@ small.error {
 .btn_white:hover {
 background-color: #fff;
 color:#3DB6E9;
+}
+
+
+#project-va, #project-va h2,  #project-va h3 ,#project-va .fa, #project-va h4 { color: #666;
+                                                                                line-height: 1.5;}
+#project-va a { color: #3DB6E9;}
+#project-va h4 { font-weight: bold;}
+
+#our-team span { text-align: center; margin-top:}
+#our-team h4 { margin-top:10px; font-weight: bold;}
+
+
+#recomm .recomm-word {
+	width: 80%;
+	height: auto;
+  margin:0px auto 20px auto;
+	padding:0px  20px 20px 20px;
+}
+#recomm .recomm-word a:hover {
+	text-decoration: underline;
+}
+#recomm .recomm-word h2 {
+	font-size: 1.3em;
+	font-weight: bold;
 }
